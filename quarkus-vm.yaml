@@ -52,10 +52,10 @@ spec:
               user: cloud-user
               password: redhat
               chpasswd: { expire: False }
-              #rh_subscription:
+              rh_subscription:
                 #아래 두 값을 넣어주셔야 runcmd에서 바로 dnf 가능합니다
-                #activation-key: 
-                #org: 
+                activation-key: mjang-poc
+                org: 11009103
               runcmd:
                 - dnf install glibc-devel zlib-devel gcc freetype-devel libstdc++ git java-21-openjdk-devel unzip apr postgresql-server -y
                 - cd /root && curl -O -J -L "https://github.com/graalvm/mandrel/releases/download/mandrel-23.1.5.0-Final/mandrel-java21-linux-amd64-23.1.5.0-Final.tar.gz"
